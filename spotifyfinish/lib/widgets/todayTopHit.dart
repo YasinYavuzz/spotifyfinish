@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spotifyfinish/widgets/startup.dart';
 
-
 class TodayTopHits extends StatefulWidget {
   const TodayTopHits({super.key});
 
@@ -113,7 +112,6 @@ class _TodayTopHitsState extends State<TodayTopHits> {
                 margin: EdgeInsets.only(top: 10),
                 width: double.infinity,
                 child: Slider(
-                  
                   value: _currentSlider,
                   activeColor: Colors.green,
                   inactiveColor: Colors.white,
@@ -193,9 +191,7 @@ class _TodayTopHitsState extends State<TodayTopHits> {
                   child: Container(
                     child: IconButton(
                       icon: Image.asset('assets/todayHitsPlayButton.png'),
-                      onPressed: () {
-                        
-                      },
+                      onPressed: () {},
                     ),
                   ),
                 ),

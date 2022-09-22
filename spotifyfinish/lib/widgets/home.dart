@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
-
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
 
   @override
   State<HomeWidget> createState() => _HomeWidgetState();
 }
+// Login sayfasında my homepage sayfasına geçiş yapıyoruz orada selectedIndex sıfır olduğu için body kısmında bu sayfa açılıyor.
 
 class _HomeWidgetState extends State<HomeWidget> {
+  // ListView tanımladığımız için verilerin dinamik getirmemiz gerekiyor. o yapılarıda buradaki listelerden seçiyoruz.
   List<String> _songArtist = [
     "Juice Wrld, Drake, Kendrick",
     "Joji, The KID LAROI",
@@ -31,7 +31,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: SingleChildScrollView(
+      body: SingleChildScrollView( // body kısmının hareket etmesini sağlıyoruz bir scroolview ekliyoruz
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.start,
           //crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,8 +41,8 @@ class _HomeWidgetState extends State<HomeWidget> {
               width: 336,
               height: 60,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween, // Yatayda içerisine verdiğimiz widgetların arasını açıyoruz.
+                crossAxisAlignment: CrossAxisAlignment.center, // Dikeydede ortalıyoruz.
                 children: [
                   Text(
                     'Good Morning',

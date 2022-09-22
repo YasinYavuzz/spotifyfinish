@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spotifyfinish/widgets/todayTopHit.dart';
 
-
 class TopHits extends StatefulWidget {
   const TopHits({super.key});
 

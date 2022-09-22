@@ -4,7 +4,6 @@ import 'package:spotifyfinish/widgets/library.dart';
 import 'package:spotifyfinish/widgets/search.dart';
 import 'package:spotifyfinish/widgets/startup.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -12,7 +11,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,8 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: StartUpWidget(
-        click: true,
+      home: StartUpWidget( // Çalıştığında hangi sayfa gelecek
+        click: true, // çağırdığım sayfayı parametre olarak verdim.
       ),
     );
   }
@@ -35,35 +33,35 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int selectedIndex = 0;
+  int selectedIndex = 0; // hangi index'i seçtiğim bilgisini tuttuğum için sayfa değişimini
 
-  onTap(index) {
+  onTap(index) { // index üzerindeki değişimleri dinle => selectedIndex = index oluyor.
     setState(() {
       selectedIndex = index;
     });
   }
 
-  final List<Widget> screens = [
-    const HomeWidget(),
-    const SearchWidget(),
-    const LibraryWidget(),
+  final List<Widget> screens = [ // Hangi index seçili ise sayfaya git.
+    const HomeWidget(), // index => 0
+    const SearchWidget(), // index => 1
+    const LibraryWidget(), // index => 2
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: screens[selectedIndex],
+      body: screens[selectedIndex], // body ekranımız hangi index seçili ise o widget çalıştırılıyor.
 
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: selectedIndex,
+        currentIndex: selectedIndex, // gelen index => currentIndex
         backgroundColor: Colors.black,
-        onTap: onTap,
+        onTap: onTap, // tıklanma özelliği veriliyor.
 
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/home.png',
-                color: selectedIndex == 0 ? Colors.green : Colors.white),
+        items: <BottomNavigationBarItem>[ // Bottom navigation barların itemları
+          BottomNavigationBarItem( // BottomNavigationBarItemları giriyoruz
+            icon: Image.asset('assets/home.png', // ilk item image icon olarak veriyoruz
+                color: selectedIndex == 0 ? Colors.green : Colors.white), // burada da bottomNavigationBar kısmında hangi eleman seçili ise onun rengini değiştiriyoruz.
             label: '',
           ),
           BottomNavigationBarItem(
@@ -79,9 +77,9 @@ class _MyHomePageState extends State<MyHomePage> {
             label: '',
           ),
         ],
-
         //selectedItemColor: Colors.amber[800],
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ), 
     );
   }
 }
+// aaaa
